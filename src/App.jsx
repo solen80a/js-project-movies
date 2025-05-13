@@ -11,14 +11,14 @@ export const App = () => {
   return (
     <>
       <Nav />
-      <FetchMovieDetails/>
-      
-      <BrowserRouter> 
-      <Routes>
-        <Route path="/" element={<MovieList />} />
-        <Route path="/movie" element={<ShowMovie />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <FetchMovieDetails />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MovieList />} />
+          <Route path="/movie" element={<ShowMovie />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </BrowserRouter >
     </>
   )
