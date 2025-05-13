@@ -2,16 +2,13 @@ import { useEffect, useState } from "react";
 import { Movie } from "./Movie";
 import styled from "styled-components";
 
-
-
-export const FetchMovieDetails = () => {
-
-  const MovieListWrapper = styled.div`
+const MovieListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
   `
+
+export const FetchMovieDetails = () => {
 
   const [movie, setMovie] = useState([]);
 
@@ -49,13 +46,11 @@ export const FetchMovieDetails = () => {
           <Movie
             key={movie.id}
             title={movie.title}
-
+            release_date={movie.release_date}
+            image={movie.backdrop_path}
           />
         ))}
-
       </MovieListWrapper>
-
-
 
     </>
   )
