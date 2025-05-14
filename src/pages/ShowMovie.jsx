@@ -6,7 +6,7 @@ const ShowMovieWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 93dvh;
+  height: 92dvh;
   overflow: auto;
   background-image: url(${props => props.$background});
   background-size: cover;

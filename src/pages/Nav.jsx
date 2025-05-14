@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const NavWrapper = styled.div`
-height: 7dvh;
+  height: 7dvh;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
