@@ -1,5 +1,5 @@
-//import { Link } from "react-router-dom"
-import { Link } from "react-router"
+import { Link } from "react-router-dom"
+// import { Link } from "react-router"
 import { Movie } from "../components/Movie"
 //import ships from "../star_wars_ships.json"
 //import { FetchMovieDetails } from "../components/FetchMovieDetails"
