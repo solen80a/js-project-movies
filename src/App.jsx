@@ -9,11 +9,16 @@ import { useEffect, useState } from "react";
 
 export const App = () => {
 
-const [movie, setMovie] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   //Something wrong with the .env file?????
-  const apiKey = import.meta.env.VITE_TMDB_API_KEY  
+  const apiKey = import.meta.env.VITE_TMDB_API_KEY
   //console.log("API Key:", apiKey);
+  // {
+  //   movies.map((movie) => (
+  //     console.log(movie.title)
+  //   ))
+  // }
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -24,9 +29,9 @@ const [movie, setMovie] = useState([]);
         }
 
         const data = await response.json()
-          
-        console.log("One movie sample:", data.results[0]);
-        setMovie(data.results);
+
+        //console.log("One movie sample:", data.results[0]);
+        setMovies(data.results);
 
       } catch (error) {
         //alert("Oh no, something went wrong!\nThere was an error, please try again later \n" + error)    
@@ -35,16 +40,17 @@ const [movie, setMovie] = useState([]);
     }
 
     fetchMovies();
-  }, [apiKey])
 
+  }, [apiKey])
+  //console.log(title[0])
   return (
     <>
       <Nav />
-      
+
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MovieList movie={movie} />} />
-          <Route path="/movie" element={<ShowMovie movie={movie} />} />
+          <Route path="/" element={<MovieList movies={movies} />} />
+          <Route path="/movie/:movieID" element={<ShowMovie movies={movies} />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter >
