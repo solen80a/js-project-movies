@@ -1,8 +1,6 @@
 import { useParams } from "react-router"
 import styled from "styled-components"
 import { Link } from "react-router";
-import { Route } from "react-router";
-import { App } from "../App";
 
 const ShowMovieWrapper = styled.div`
   display: flex;
@@ -14,7 +12,7 @@ const ShowMovieWrapper = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white; /* Ensure text is visible over the image */
+  color: white; 
   padding: 2rem;
 
   img {
