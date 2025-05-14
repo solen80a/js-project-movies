@@ -12,6 +12,12 @@ const MovieListWrapper = styled.div`
   cursor: pointer;
   `
 
+  const MovieListLinkWrapper = styled(Link)`
+    text-decoration: none;
+    display: block;
+    width: 25%;
+  `
+
 export const MovieList = ({ movies }) => {
 
 
@@ -19,15 +25,15 @@ export const MovieList = ({ movies }) => {
     <>
       <MovieListWrapper>
         {movies.map((movie) => (
-          <Link key={movie.id} to={`/movie/${movie.id}`}>
+          <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>           
             <Movie
               title={movie.title}
               release_date={movie.release_date}
               image={movie.backdrop_path}
-            />
-          </Link>
+            />           
+          </MovieListLinkWrapper>
         ))}
-      </MovieListWrapper>
+     </MovieListWrapper>
     </>
   )
 }

@@ -2,37 +2,42 @@ import styled from "styled-components"
 
 const MovieWraper = styled.div`
   position: relative;
-  border: solid black 2px;
-  width: 25%;
+  border: solid black 2px;  
+  width: 100%;
   aspect-ratio: 2 / 3;
   text-align: left;
+  
+  
 
 img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   transition: ease .2s;
+  
 } 
 
 img:hover {
 filter: brightness(30%);
+
 }
 
  &:hover div {
     display: block;
     transition: ease .2s;
+    
   }
 `
 
 const TextContainer = styled.div`
 position: absolute;
 top: 90%;
-left: 30%;
+left: 35%;
 transform: translate(-50%, -50%);
 text-align: left;
 color: white;
 display: none;
-
+width: 300px;
 `
 
 export const Movie = ({ title, release_date, image }) => {
