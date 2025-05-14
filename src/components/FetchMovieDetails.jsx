@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Movie } from "./Movie";
 import styled from "styled-components";
+import { MovieList } from "../pages/MovieList"
 
-const MovieListWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  `
+
+// const MovieListWrapper = styled.div`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   `
 
 export const FetchMovieDetails = () => {
 
@@ -26,7 +28,8 @@ export const FetchMovieDetails = () => {
         }
 
         const data = await response.json()
-        //console.log("One movie sample:", data.results[0]);
+          
+        console.log("One movie sample:", data.results[0]);
         setMovie(data.results);
 
       } catch (error) {
@@ -38,20 +41,22 @@ export const FetchMovieDetails = () => {
     fetchMovies();
   }, [apiKey])
 
-  return (
-    <>
-      {/* <h1>The Popular Movies</h1>  */}
-      <MovieListWrapper>
-        {movie.map((movie) => (
-          <Movie
-            key={movie.id}
-            title={movie.title}
-            release_date={movie.release_date}
-            image={movie.backdrop_path}
-          />
-        ))}
-      </MovieListWrapper>
+  return <MovieList movie={movie} />;
 
-    </>
-  )
+  // return (
+  //   <>
+  //     {/* <h1>The Popular Movies</h1>  */}
+  //     <MovieListWrapper>
+  //       {movie.map((movie) => (
+  //         <Movie
+  //           key={movie.id}
+  //           title={movie.title}
+  //           release_date={movie.release_date}
+  //           image={movie.backdrop_path}
+  //         />
+  //       ))}
+  //     </MovieListWrapper>
+
+  //   </>
+  // )
 }
