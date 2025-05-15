@@ -6,6 +6,7 @@ import { Nav } from "./pages/Nav";
 import { Movie } from "./components/Movie";
 import { useEffect, useState } from "react";
 import { Loader } from "./components/Loader";
+import { NotFound } from "./pages/NotFound";
 
 export const App = () => {
 
@@ -13,7 +14,7 @@ export const App = () => {
   const [loading, setLoading] = useState(false);
 
   const apiKey = import.meta.env.VITE_TMDB_API_KEY
- 
+
 
   useEffect(() => {
     setLoading(true);
@@ -40,22 +41,24 @@ export const App = () => {
     fetchMovies();
 
   }, [apiKey])
- 
+
   if (loading) {
-    return (           
-      <Loader /> 
+    return (
+      <Loader />
     )
   }
-  
+
   return (
     <>
-      <Nav />   
+      <Nav />
 
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MovieList movies={movies} />} />
           <Route path="/movie/:movieID" element={<ShowMovie />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+
         </Routes>
       </BrowserRouter >
     </>

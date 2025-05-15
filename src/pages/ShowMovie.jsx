@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Media } from "../components/Media"
+import { NotFound } from "./NotFound";
 
 //#region ---- Styling ----
 
