@@ -8,26 +8,36 @@ const AboutSectionWrapper = styled.section`
   flex-wrap: wrap;
   padding: 2rem;
   width: 75%;
+  margin: 0 auto;
+
+    h1, h2 {
+    text-align: center;
+    margin:35px 0;
+  }
 
  /* desktop */
     @media ${Media.desktop}{   
     width: 50%;  
-    margin: 0 auto;
+
+      h1, h2 {
+    text-align: left;
+  }
+
   }
 
    /* Widescreen */
     @media ${Media.widescreen}{   
      width: 50%;    
      margin: 0 auto;
+        h1, h2 {
+    text-align: left;
   }
 
-  h1 {
-    text-align: center;
-  }
+
 `
 
 const AboutTextWrapper = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

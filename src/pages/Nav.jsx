@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Media } from "../components/Media";
+// import { Link, NavLink } from "react-router-dom";
+import { DesktopNav } from "./DesktopNav copy";
+import { BurgerNav } from "./BurgerNav";
 
 //#region ---- Styling ----
-const NavWrapper = styled.header`
+const DesktopNavWrapper = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,37 +30,53 @@ const NavWrapper = styled.header`
 
   li {
     display: inline-block;
-    margin-left: 10px;
+    margin: 25px;
   }
   
   a {
     color: #fff;
     text-decoration: none;
+    display: inline-block; 
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  a:hover {
+ transform: scale(1.07);
   }
 
   a.active {
   text-decoration: underline;
+  transform: scale(1.2);
+  color: #fa5555;
 }
+
+  @media ${Media.smallerSizes}{ 
+    display: none;
+  }
+
+`;
+
+const BurgerNavWrapper = styled.header`
+  
+  @media ${Media.biggerSizes}{ 
+    display: none;
+  }
 
 `;
 //#endregion
 
 export const Nav = () => {
   return (
-    <NavWrapper>
-      <h1>
-        <Link to="/">CineVault</Link>
-      </h1>    
-      <div> 
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>          
-        </ul> 
-      </div>
-    </NavWrapper>
+    <>
+      <DesktopNavWrapper>
+        <DesktopNav>
+        </DesktopNav>
+      </DesktopNavWrapper>
+
+      <BurgerNavWrapper>
+        <BurgerNav>
+        </BurgerNav>
+      </BurgerNavWrapper>
+    </>
   );
 };
