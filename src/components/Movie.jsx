@@ -102,7 +102,7 @@ export const Movie = ({ title, release_date, image }) => {
   return (
     <>
       <MovieWraper>
-        <img src={`https://image.tmdb.org/t/p/original${image}`} alt={title} />
+        <img src={`https://image.tmdb.org/t/p/original${image}`} alt={`A picture of the movie called ${title}`} />
         <TextContainer>
           <h2>{title}</h2>
           <p>Release: {release_date}</p>

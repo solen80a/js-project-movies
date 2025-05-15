@@ -137,7 +137,7 @@ export const ShowMovie = () => {
 
         <MovieTextWrapper>
           <div>
-            <img src={`https://image.tmdb.org/t/p/original${movieDetails.poster_path}`} alt="" />
+            <img src={`https://image.tmdb.org/t/p/original${movieDetails.poster_path}`} alt={`A picture of the movie called ${movieDetails.title}`} />
           </div>
           <div>
             <h2>{movieDetails.title}</h2>
