@@ -14,7 +14,7 @@ const MovieListWrapper = styled.section`
 const MovieListLinkWrapper = styled(Link)`
   text-decoration: none;
   display: block;
-  width: 95%;
+  width: 100%;
 
    /* Tablet */
   @media ${Media.tablet}{      
@@ -40,15 +40,15 @@ export const MovieList = ({ movies }) => {
     <section>
       <MovieListWrapper>
         {movies.map((movie) => (
-          <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>           
+          <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>
             <Movie
               title={movie.title}
               release_date={movie.release_date}
               image={movie.poster_path}
-            />           
+            />
           </MovieListLinkWrapper>
         ))}
-     </MovieListWrapper>
+      </MovieListWrapper>
     </section>
   )
 }
