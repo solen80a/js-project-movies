@@ -42,10 +42,12 @@ const MovieTextWrapper = styled.div`
 `
 
 const BackToMoviesWrapper = styled(Link) `
-  border: solid 3px black;
-  background-color: black;
-  width: 300px;
-  text-align: center;
+  /* border: solid 3px white;
+  background-color: black; */
+  width: 250px;
+  text-align: left;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 1rem ;
 
 `
 
