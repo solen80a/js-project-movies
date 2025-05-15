@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 import styled from "styled-components"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Media } from "../components/Media"
 
 //#region ---- Styling ----
 
@@ -19,7 +20,7 @@ const ShowMovieWrapper = styled.div`
   padding: 2rem;
 
   img {
-  height: 550px;
+  width: 55dvw;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   transition: ease .2s;
@@ -31,17 +32,59 @@ const ShowMovieWrapper = styled.div`
     color: white;
     cursor: pointer;
     font-size: 20px;
+  } 
+
+  
+   /* Tablet */
+  @media ${Media.tablet}{   
+      img {
+           width: 300px;
+        } 
   }
+
+  /* desktop */
+    @media ${Media.desktop}{  
+      
+      img {
+       width: 400px;
+        }
+
+  
+  }
+
+   /* Widescreen */
+    @media ${Media.widescreen}{  
+
+     img {
+         width: 400px;
+        }
+  }
+
 
 `;
 
 const MovieTextWrapper = styled.div`
-  display: flex;
-  align-items: flex-end;
+  display: block;
   column-gap: 50px;
   width: 100%;
   max-width: 1000px; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+     /* Tablet */
+  @media ${Media.tablet}{        
+  }
+
+  /* desktop */
+    @media ${Media.desktop}{  
+      display: flex;
+      align-items: flex-end;
+  }
+
+   /* Widescreen */
+    @media ${Media.widescreen}{ 
+      display: flex;
+      align-items: flex-end;   
+  }
 `
 
 const BackToMoviesWrapper = styled(Link)`
