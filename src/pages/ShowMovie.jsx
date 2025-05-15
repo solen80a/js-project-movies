@@ -13,7 +13,9 @@ const ShowMovieWrapper = styled.div`
   justify-content: space-between;
   height: 92dvh;
   overflow: auto;
-  background-image: url(${props => props.$background});
+  background-image: 
+    linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0) 50%),
+    url(${props => props.$background});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
