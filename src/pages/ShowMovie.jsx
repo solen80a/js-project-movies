@@ -41,6 +41,14 @@ const MovieTextWrapper = styled.div`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `
 
+const BackToMoviesWrapper = styled(Link) `
+  border: solid 3px black;
+  background-color: black;
+  width: 300px;
+  text-align: center;
+
+`
+
 
 export const ShowMovie = ({ movies }) => {
   const params = useParams()
@@ -53,7 +61,7 @@ export const ShowMovie = ({ movies }) => {
   return (
     <>
       <ShowMovieWrapper $background={backgroundUrl}>
-        <Link to={"/"}>Back to Movies</Link>
+        <BackToMoviesWrapper to={"/"}> ⬅ Back to Movies</BackToMoviesWrapper>
 
         <MovieTextWrapper>
           <div>
@@ -62,7 +70,7 @@ export const ShowMovie = ({ movies }) => {
           <div>
             <h2>{movieMatch.title}</h2>
             <p>{movieMatch.overview}</p>
-            <p>{`${movieMatch.vote_average.toFixed(1)} Stars`}</p>
+            <p>{`${movieMatch.vote_average.toFixed(1)} ⭐`}</p>
           </div>
         </MovieTextWrapper>
       </ShowMovieWrapper >
