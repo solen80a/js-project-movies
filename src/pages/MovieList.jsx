@@ -45,7 +45,7 @@ export const MovieList = ({ movies }) => {
             <Movie
               title={movie.title}
               release_date={movie.release_date}
-              image={movie.backdrop_path}
+              image={movie.poster_path}
             />           
           </MovieListLinkWrapper>
         ))}

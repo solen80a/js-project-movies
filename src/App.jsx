@@ -43,6 +43,7 @@ export const App = () => {
 
   }, [apiKey])
   //console.log(title[0])
+  
   return (
     <>
       <Nav />
