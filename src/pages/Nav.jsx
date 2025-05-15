@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
+//#region ---- Styling ----
 const NavWrapper = styled.header`
   display: flex;
   justify-content: space-between;
@@ -39,6 +40,7 @@ const NavWrapper = styled.header`
 }
 
 `;
+//#endregion
 
 export const Nav = () => {
   return (

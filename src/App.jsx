@@ -3,7 +3,6 @@ import { MovieList } from "./pages/MovieList";
 import { ShowMovie } from "./pages/ShowMovie";
 import { About } from "./pages/About";
 import { Nav } from "./pages/Nav";
-import { Movie } from "./components/Movie";
 import { useEffect, useState } from "react";
 import { Loader } from "./components/Loader";
 import { NotFound } from "./pages/NotFound";

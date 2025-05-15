@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Media } from "../components/Media"
 
+//#region ---- Styling ----
 const AboutSectionWrapper = styled.section `
   
   text-align: left;
@@ -18,7 +19,7 @@ const AboutSectionWrapper = styled.section `
      width: 50%;    
   }
 
-  &h1 {
+  h1 {
     text-align: center;
   }
 `
@@ -30,6 +31,7 @@ display: flex;
   align-items: center;
 
 `
+//#endregion
 
 export const About = () => {
   return (

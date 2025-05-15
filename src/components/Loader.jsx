@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//#region ---- Styling ----
 const LoadWrapperSection = styled.section`
   display: flex;
   justify-content: center;
@@ -47,6 +48,7 @@ const LoadWrapper = styled.div `
       }
     }
 `
+//#endregion
 
 export const Loader = () => {
   return (

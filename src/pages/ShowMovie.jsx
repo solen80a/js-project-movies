@@ -42,7 +42,7 @@ const ShowMovieWrapper = styled.div`
   @media ${Media.tablet}{   
       img {
            width: 300px;
-        } 
+      } 
   }
 
   /* desktop */
@@ -50,9 +50,7 @@ const ShowMovieWrapper = styled.div`
       
       img {
        width: 400px;
-        }
-
-  
+      }  
   }
 
    /* Widescreen */
@@ -60,10 +58,8 @@ const ShowMovieWrapper = styled.div`
 
      img {
          width: 400px;
-        }
+      }
   }
-
-
 `;
 
 const MovieTextWrapper = styled.div`
@@ -90,9 +86,7 @@ const MovieTextWrapper = styled.div`
   }
 `
 
-const BackToMoviesWrapper = styled(Link)`
-  /* border: solid 3px white;
-  background-color: black; */
+const BackToMoviesWrapper = styled(Link)` 
   width: 250px;
   text-align: left;  
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

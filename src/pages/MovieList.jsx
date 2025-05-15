@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom"
-// import { Link } from "react-router"
 import { Movie } from "../components/Movie"
-//import ships from "../star_wars_ships.json"
-//import { FetchMovieDetails } from "../components/FetchMovieDetails"
 import styled from "styled-components"
 import { Media } from "../components/Media"
 
+//#region ---- Styling ----
 const MovieListWrapper = styled.section`
   display: flex;  
   flex-wrap: wrap;
@@ -33,6 +31,7 @@ const MovieListLinkWrapper = styled(Link)`
     width: 25%;   
   }
 `
+//#endregion
 
 export const MovieList = ({ movies }) => {
 
