@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Media } from "../components/Media"
 
 const MovieWraper = styled.div`
   position: relative;
@@ -17,16 +18,39 @@ img {
   
 } 
 
-img:hover {
-filter: brightness(30%);
+/* Desktop */
+ @media ${Media.desktop}{      
+    
+    width: 100%;
 
-}
-
- &:hover div {
+     &:hover div {
     display: block;
     transition: ease .2s;
     
   }
+
+  img:hover {
+  filter: brightness(30%);
+
+  }
+}  
+
+/* Widescreen */
+ @media ${Media.widescreen}{      
+    
+    width: 100%;
+
+     &:hover div {
+    display: block;
+    transition: ease .2s;
+    
+  }
+
+  img:hover {
+  filter: brightness(30%);
+
+  }
+}  
 `
 
 const TextContainer = styled.div`
@@ -36,8 +60,41 @@ left: 35%;
 transform: translate(-50%, -50%);
 text-align: left;
 color: white;
-display: none;
-width: 300px;
+width: 150px;
+
+  h2{
+    font-size: 16px;
+  }
+
+/* Tablet */
+ @media ${Media.tablet}{      
+    
+
+}
+
+/* Desktop */
+ @media ${Media.desktop}{      
+    display: none;
+    width: 200px;
+    top: 85%;
+    left: 50%;
+
+    h2{
+      font-size: 24px;  
+    } 
+}
+
+/* Widescreen */
+ @media ${Media.widescreen}{      
+    display: none;
+    width: 300px;
+    top: 85%;
+    left: 50%;
+
+    h2{
+      font-size: 24px;  
+    } 
+}
 `
 
 export const Movie = ({ title, release_date, image }) => {

@@ -4,19 +4,35 @@ import { Movie } from "../components/Movie"
 //import ships from "../star_wars_ships.json"
 //import { FetchMovieDetails } from "../components/FetchMovieDetails"
 import styled from "styled-components"
+import { Media } from "../components/Media"
 
 const MovieListWrapper = styled.div`
-  display: flex;
+  display: flex;  
   flex-wrap: wrap;
   justify-content: center;
-  cursor: pointer;
+  cursor: pointer;  
   `
 
-  const MovieListLinkWrapper = styled(Link)`
-    text-decoration: none;
-    display: block;
-    width: 25%;
-  `
+const MovieListLinkWrapper = styled(Link)`
+  text-decoration: none;
+  display: block;
+  width: 95%;
+
+   /* Tablet */
+  @media ${Media.tablet}{      
+    width: 50%;    
+  }
+
+  /* desktop */
+    @media ${Media.desktop}{   
+    width: 33%;   
+  }
+
+   /* Widescreen */
+    @media ${Media.widescreen}{   
+    width: 25%;   
+  }
+`
 
 export const MovieList = ({ movies }) => {
 
