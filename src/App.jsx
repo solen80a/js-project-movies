@@ -43,7 +43,7 @@ export const App = () => {
 
   }, [apiKey])
   //console.log(title[0])
-  
+
   return (
     <>
       <Nav />
@@ -51,7 +51,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MovieList movies={movies} />} />
-          <Route path="/movie/:movieID" element={<ShowMovie movies={movies} />} />
+          <Route path="/movie/:movieID" element={<ShowMovie />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter >
