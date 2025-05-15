@@ -131,7 +131,7 @@ export const ShowMovie = () => {
   const backgroundUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`;
 
   return (
-    <>
+    <section>
       <ShowMovieWrapper $background={backgroundUrl}>
         <BackToMoviesWrapper to={"/"}> ⬅ Back to Movies</BackToMoviesWrapper>
 
@@ -146,7 +146,7 @@ export const ShowMovie = () => {
           </div>
         </MovieTextWrapper>
       </ShowMovieWrapper >
-    </>
+    </section>
   )
 }
 

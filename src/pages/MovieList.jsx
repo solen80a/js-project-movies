@@ -6,7 +6,7 @@ import { Movie } from "../components/Movie"
 import styled from "styled-components"
 import { Media } from "../components/Media"
 
-const MovieListWrapper = styled.div`
+const MovieListWrapper = styled.section`
   display: flex;  
   flex-wrap: wrap;
   justify-content: center;
@@ -38,7 +38,7 @@ export const MovieList = ({ movies }) => {
 
 
   return (
-    <>
+    <section>
       <MovieListWrapper>
         {movies.map((movie) => (
           <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>           
@@ -50,6 +50,6 @@ export const MovieList = ({ movies }) => {
           </MovieListLinkWrapper>
         ))}
      </MovieListWrapper>
-    </>
+    </section>
   )
 }
