@@ -15,7 +15,7 @@ const LoadWrapper = styled.div`
    
 
   .loader {
-  color: #fff;
+  color: black;
   display: inline-block;
   position: relative;
   font-size: 32px;  
@@ -54,7 +54,7 @@ export const Loader = () => {
   return (
     <LoadWrapperSection>
       <LoadWrapper>
-        <div className="loader" role="status">Loading Movie</div>
+        <div className="loader" role="status">Loading Movie ...</div>
       </LoadWrapper>
     </LoadWrapperSection>
   )
