@@ -69,6 +69,7 @@ const MovieTextWrapper = styled.div`
   width: 100%;
   max-width: 1000px; 
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding-bottom: 14px;
 
      /* Tablet */
   @media ${Media.tablet}{        
