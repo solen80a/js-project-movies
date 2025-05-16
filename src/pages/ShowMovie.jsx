@@ -12,7 +12,7 @@ const ShowMovieWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 92dvh;
+  height: 93dvh;
   overflow: auto;
   background-image: 
     linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0) 50%),
