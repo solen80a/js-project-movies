@@ -13,6 +13,8 @@ export const useFetchMovies = (url) => {
         const data = await response.json();
         if (data.results) {
           setMovies(data.results);
+        } else if (data.cast) {
+          setMovies(data.cast);
         } else {
           setMovies(data);
         }

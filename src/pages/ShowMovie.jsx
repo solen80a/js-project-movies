@@ -6,6 +6,7 @@ import { NotFound } from "./NotFound";
 import { useFetchMovies } from "../components/useFetchApi";
 import { getMovieUrls } from "../components/getMovieUrls";
 import { Loader } from "../components/Loader";
+import { MoreDetails } from "../components/MoreDetails";
 
 //#region ---- Styling ----
 
@@ -101,8 +102,9 @@ const BackToMoviesWrapper = styled(Link)`
 
 export const ShowMovie = () => {
   const { movieID, language } = useParams();
-  const { movieDetailUrl } = getMovieUrls({ movieID, language });
+  const { movieDetailUrl, movieCreditsUrl } = getMovieUrls({ movieID, language });
   const { movies, loading } = useFetchMovies(movieDetailUrl);
+  const { movies: actors } = useFetchMovies(movieCreditsUrl);
 
   const backgroundUrl = `https://image.tmdb.org/t/p/original${movies.backdrop_path}`;
 
@@ -111,22 +113,29 @@ export const ShowMovie = () => {
   }
 
   return (
-    <section>
-      <ShowMovieWrapper $background={backgroundUrl}>
-        <BackToMoviesWrapper to={language === "en-EN" ? "/" : `/${language}`}> ⬅ Back to Movies</BackToMoviesWrapper>
+    <>
+      <section>
+        <ShowMovieWrapper $background={backgroundUrl}>
+          <BackToMoviesWrapper to={language === "en-EN" ? "/" : `/${language}`}> ⬅ Back to Movies</BackToMoviesWrapper>
 
-        <MovieTextWrapper>
-          <div>
-            <img src={`https://image.tmdb.org/t/p/original${movies.poster_path}`} alt={`A picture of the movie called ${movies.title}`} />
-          </div>
-          <div>
-            <h2>{movies.title}</h2>
-            <p>{movies.overview}</p>
-            <p>{`${Number(movies.vote_average).toFixed(1)} ⭐`}</p>
-          </div>
-        </MovieTextWrapper>
-      </ShowMovieWrapper >
-    </section>
+          <MovieTextWrapper>
+            <div>
+              <img src={`https://image.tmdb.org/t/p/original${movies.poster_path}`} alt={`A picture of the movie called ${movies.title}`} />
+            </div>
+            <div>
+              <h2>{movies.title}</h2>
+              <p>{movies.overview}</p>
+              <p>{`${Number(movies.vote_average).toFixed(1)} ⭐`}</p>
+            </div>
+          </MovieTextWrapper>
+        </ShowMovieWrapper >
+
+      </section>
+      <section>
+        <MoreDetails actors={actors} />
+      </section>
+    </>
+
   )
 }
 

@@ -67,11 +67,9 @@ export const DesktopNav = () => {
             <NavLink to="/ru-RU">Russian</NavLink>
           </li>
         </ul>
-
       </div>
 
       <NavLink to="/about">About</NavLink>
-
 
     </Wrapper>
   );
