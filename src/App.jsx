@@ -6,6 +6,7 @@ import { Nav } from "./pages/Nav";
 import { useEffect, useState } from "react";
 import { Loader } from "./components/Loader";
 import { NotFound } from "./pages/NotFound";
+import { AppTest } from "./components/AppTest";
 
 export const App = () => {
 
@@ -49,17 +50,18 @@ export const App = () => {
 
   return (
     <>
-       
+
 
       <BrowserRouter>
-      <Nav />  
-        <Routes>
+        <Nav />
+        <AppTest></AppTest>
+        {/* <Routes>
           <Route path="/" element={<MovieList movies={movies} />} />
           <Route path="/movie/:movieID" element={<ShowMovie />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
 
-        </Routes>
+        </Routes> */}
       </BrowserRouter >
     </>
   )
