@@ -39,7 +39,7 @@ export const MovieList = ({ movies }) => {
   return (
     <section>
       <MovieListWrapper>
-        {movies.map((movie) => (
+        {movies.length && movies.map((movie) => (
           <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>
             <Movie
               title={movie.title}
