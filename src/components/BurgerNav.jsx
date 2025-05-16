@@ -50,13 +50,13 @@ const Sidebar = styled.div`
     position: fixed;
     top: 0;
     right: ${({ open }) => (open ? "0" : "-250px")};
-    width: 250px;
+    width: 230px;
     height: 100vh;
     background: white;
     color: #000000;
     display: flex;
     flex-direction: column;
-    padding: 80px 20px;
+    padding: 80px 40px;
     gap: 20px;
     transition: right 0.3s ease;
     z-index: 1000;

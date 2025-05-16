@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { MovieList } from "./pages/MovieList";
 import { ShowMovie } from "./pages/ShowMovie";
 import { About } from "./pages/About";
-import { Nav } from "./pages/Nav";
+import { Nav } from "./components/Nav";
 import { NotFound } from "./pages/NotFound";
 import { getMovieUrls, LanguageTags } from "./components/getMovieUrls";
 
