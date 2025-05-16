@@ -1,29 +1,19 @@
-import { useFetchMovies } from "./FetchApi";
+import { getMovieUrls } from "./getMovieUrls";
+import { Page } from "./Page";
 
 export const AppTest = () => {
 
-  //Make a new Component
-  const apiKey = import.meta.env.VITE_TMDB_API_KEY;
-  const urlEn = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=-US&page=1`;
-  const urlEs = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-ES&page=1`;
-
-  const { movies: moviesEn } = useFetchMovies(urlEn);
-  const { movies: moviesEs } = useFetchMovies(urlEs);
+  const { en: urlEn, es: urlEs } = getMovieUrls();
 
   return (
     <>
-      <p>Site 1 (English)</p>
-      {moviesEn.map((movie) => (
-        <p key={movie.id}>{movie.title}</p>
-      ))}
+      <Page url={urlEn}></Page>
 
       <br />
       <hr />
+      <Page url={urlEs}></Page>
 
-      <p>Site 2 (Spanish)</p>
-      {moviesEs.map((movie) => (
-        <p key={movie.id}>{movie.title}</p>
-      ))}
+
     </>
   );
 };
