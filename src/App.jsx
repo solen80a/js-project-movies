@@ -8,7 +8,7 @@ import { getMovieUrls } from "./components/getMovieUrls";
 
 export const App = () => {
 
-  const { en: urlEn, es: urlEs, ru: urlRu } = getMovieUrls();
+  const { englishUrl: urlEn, spanishUrl: urlEs, russianUrl: urlRu } = getMovieUrls();
 
   const englishTag = "en-EN"
   const spanishTag = "es-ES"

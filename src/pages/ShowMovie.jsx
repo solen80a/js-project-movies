@@ -1,9 +1,10 @@
 import { useParams } from "react-router"
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { Media } from "../components/Media"
 import { NotFound } from "./NotFound";
+import { useFetchMovies } from "../components/useFetchApi";
+import { getMovieUrls } from "../components/getMovieUrls";
 
 //#region ---- Styling ----
 
@@ -96,34 +97,12 @@ const BackToMoviesWrapper = styled(Link)`
 
 //#endregion
 
-
 export const ShowMovie = () => {
   const { movieID, language } = useParams();
-  // const { language } = useParams();
+  const { movieDetailUrl } = getMovieUrls({ movieID, language });
+  const { movies } = useFetchMovies(movieDetailUrl);
 
-  const apiKey = import.meta.env.VITE_TMDB_API_KEY
-
-  const [movieDetails, setMovieDetails] = useState({})
-
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&language=${language}`)
-        if (!response.ok) {
-          throw new Error(`Status ${response.status}
-      `)
-        }
-        const data = await response.json()
-        setMovieDetails(data)
-      } catch (error) {
-        console.log("Error fetching data:", error)
-      }
-    }
-    fetchMovieDetails();
-  }, [apiKey, movieID, language])
-
-
-  const backgroundUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`;
+  const backgroundUrl = `https://image.tmdb.org/t/p/original${movies.backdrop_path}`;
 
   return (
     <section>
@@ -132,12 +111,12 @@ export const ShowMovie = () => {
 
         <MovieTextWrapper>
           <div>
-            <img src={`https://image.tmdb.org/t/p/original${movieDetails.poster_path}`} alt={`A picture of the movie called ${movieDetails.title}`} />
+            <img src={`https://image.tmdb.org/t/p/original${movies.poster_path}`} alt={`A picture of the movie called ${movies.title}`} />
           </div>
           <div>
-            <h2>{movieDetails.title}</h2>
-            <p>{movieDetails.overview}</p>
-            <p>{`${Number(movieDetails.vote_average).toFixed(1)} ⭐`}</p>
+            <h2>{movies.title}</h2>
+            <p>{movies.overview}</p>
+            <p>{`${Number(movies.vote_average).toFixed(1)} ⭐`}</p>
           </div>
         </MovieTextWrapper>
       </ShowMovieWrapper >

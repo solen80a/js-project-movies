@@ -37,7 +37,7 @@ const MovieListLinkWrapper = styled(Link)`
 
 export const MovieList = ({ url, language }) => {
 
-  const { movies: movies } = useFetchMovies(url);
+  const { movies } = useFetchMovies(url);
 
   return (
     <section>
