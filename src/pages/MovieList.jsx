@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Movie } from "../components/Movie"
 import styled from "styled-components"
 import { Media } from "../components/Media"
+import { useFetchMovies } from "../components/useFetchApi"
 
 //#region ---- Styling ----
 const MovieListWrapper = styled.section`
@@ -33,8 +34,10 @@ const MovieListLinkWrapper = styled(Link)`
 `
 //#endregion
 
-export const MovieList = ({ movies }) => {
 
+export const MovieList = ({ url }) => {
+
+  const { movies: movies } = useFetchMovies(url);
 
   return (
     <section>

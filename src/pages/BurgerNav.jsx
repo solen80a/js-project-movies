@@ -126,14 +126,14 @@ export const BurgerNav = () => {
           </StyledNavLink>
           <hr />
           <h3>Movies</h3>
-          <StyledNavLink to="/Popular" onClick={() => setIsOpen(false)}>
-            Popular
+          <StyledNavLink to="/" onClick={() => setIsOpen(false)}>
+            English
           </StyledNavLink>
-          <StyledNavLink to="/Upcoming" onClick={() => setIsOpen(false)}>
-            Upcoming
+          <StyledNavLink to="/es" onClick={() => setIsOpen(false)}>
+            Spanish
           </StyledNavLink>
-          <StyledNavLink to="/Now" onClick={() => setIsOpen(false)}>
-            Now Playing
+          <StyledNavLink to="/ru" onClick={() => setIsOpen(false)}>
+            Russian
           </StyledNavLink>
         </Sidebar>
       </BurgerWrapper>

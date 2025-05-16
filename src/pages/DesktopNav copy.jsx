@@ -14,13 +14,13 @@ export const DesktopNav = () => {
       <div>
         <ul>
           <li>
-            <NavLink to="/Popular">Popular</NavLink>
+            <NavLink to="/">English</NavLink>
           </li>
           <li>
-            <NavLink to="/Upcoming">Upcoming</NavLink>
+            <NavLink to="/es">Spanish</NavLink>
           </li>
           <li>
-            <NavLink to="/Now">Now Playing</NavLink>
+            <NavLink to="/ru">Russian</NavLink>
           </li>
         </ul>
       </div>
