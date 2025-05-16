@@ -3,6 +3,7 @@ import { Movie } from "../components/Movie"
 import styled from "styled-components"
 import { Media } from "../components/Media"
 import { useFetchMovies } from "../components/useFetchApi"
+import { Loader } from "../components/Loader"
 
 //#region ---- Styling ----
 const MovieListWrapper = styled.section`
@@ -37,12 +38,17 @@ const MovieListLinkWrapper = styled(Link)`
 
 export const MovieList = ({ url, language }) => {
 
-  const { movies } = useFetchMovies(url);
+  const { movies, loading } = useFetchMovies(url);
+
+  if (loading) {
+    return <Loader />;
+  }
+
 
   return (
     <section>
       <MovieListWrapper>
-        {movies.length && movies.map((movie) => (
+        {movies.length > 0 && movies.map((movie) => (
           <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}/${language}`}>
             <Movie
               title={movie.title}

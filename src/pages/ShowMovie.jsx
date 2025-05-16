@@ -5,6 +5,7 @@ import { Media } from "../components/Media"
 import { NotFound } from "./NotFound";
 import { useFetchMovies } from "../components/useFetchApi";
 import { getMovieUrls } from "../components/getMovieUrls";
+import { Loader } from "../components/Loader";
 
 //#region ---- Styling ----
 
@@ -101,9 +102,13 @@ const BackToMoviesWrapper = styled(Link)`
 export const ShowMovie = () => {
   const { movieID, language } = useParams();
   const { movieDetailUrl } = getMovieUrls({ movieID, language });
-  const { movies } = useFetchMovies(movieDetailUrl);
+  const { movies, loading } = useFetchMovies(movieDetailUrl);
 
   const backgroundUrl = `https://image.tmdb.org/t/p/original${movies.backdrop_path}`;
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <section>

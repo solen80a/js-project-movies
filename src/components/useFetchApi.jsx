@@ -23,8 +23,6 @@ export const useFetchMovies = (url) => {
       }
     };
 
-
-
     fetchMovies();
   }, [url]);
 

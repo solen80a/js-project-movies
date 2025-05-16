@@ -8,7 +8,7 @@ const LoadWrapperSection = styled.section`
   padding: 100px;
 `
 
-const LoadWrapper = styled.div `
+const LoadWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;  
@@ -54,7 +54,7 @@ export const Loader = () => {
   return (
     <LoadWrapperSection>
       <LoadWrapper>
-        <div className="loader">Loading Movie</div>
+        <div className="loader" role="status">Loading Movie</div>
       </LoadWrapper>
     </LoadWrapperSection>
   )

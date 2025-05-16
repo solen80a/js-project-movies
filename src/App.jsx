@@ -13,7 +13,6 @@ export const App = () => {
 
   return (
     <>
-
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -23,7 +22,6 @@ export const App = () => {
           <Route path="/movie/:movieID/:language" element={<ShowMovie />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
-
         </Routes>
       </BrowserRouter >
     </>
