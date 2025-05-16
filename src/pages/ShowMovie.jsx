@@ -98,7 +98,8 @@ const BackToMoviesWrapper = styled(Link)`
 
 
 export const ShowMovie = () => {
-  const { movieID } = useParams();
+  const { movieID, language } = useParams();
+  // const { language } = useParams();
 
   const apiKey = import.meta.env.VITE_TMDB_API_KEY
 
@@ -107,7 +108,7 @@ export const ShowMovie = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&language=en-US`)
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${apiKey}&language=${language}`)
         if (!response.ok) {
           throw new Error(`Status ${response.status}
       `)
@@ -119,7 +120,7 @@ export const ShowMovie = () => {
       }
     }
     fetchMovieDetails();
-  }, [apiKey, movieID])
+  }, [apiKey, movieID, language])
 
 
   const backgroundUrl = `https://image.tmdb.org/t/p/original${movieDetails.backdrop_path}`;

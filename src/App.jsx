@@ -10,6 +10,10 @@ export const App = () => {
 
   const { en: urlEn, es: urlEs, ru: urlRu } = getMovieUrls();
 
+  const englishTag = "en-EN"
+  const spanishTag = "es-ES"
+  const russianTag = "ru-RU"
+
   return (
     <>
 
@@ -17,10 +21,10 @@ export const App = () => {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" element={<MovieList url={urlEn} />} />
-          <Route path="/es" element={<MovieList url={urlEs} />} />
-          <Route path="/ru" element={<MovieList url={urlRu} />} />
-          <Route path="/movie/:movieID" element={<ShowMovie />} />
+          <Route path="/" element={<MovieList url={urlEn} language={englishTag} />} />
+          <Route path="/es" element={<MovieList url={urlEs} language={spanishTag} />} />
+          <Route path="/ru" element={<MovieList url={urlRu} language={russianTag} />} />
+          <Route path="/movie/:movieID/:language" element={<ShowMovie />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
 

@@ -35,7 +35,7 @@ const MovieListLinkWrapper = styled(Link)`
 //#endregion
 
 
-export const MovieList = ({ url }) => {
+export const MovieList = ({ url, language }) => {
 
   const { movies: movies } = useFetchMovies(url);
 
@@ -43,7 +43,7 @@ export const MovieList = ({ url }) => {
     <section>
       <MovieListWrapper>
         {movies.length && movies.map((movie) => (
-          <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}`}>
+          <MovieListLinkWrapper key={movie.id} to={`/movie/${movie.id}/${language}`}>
             <Movie
               title={movie.title}
               release_date={movie.release_date}
