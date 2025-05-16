@@ -5,11 +5,16 @@ import { Link, NavLink } from "react-router-dom";
 export const Nav = styled.nav`
     height: 60px;
     padding: 0 20px;
-    background: #111;
-    color: #fff;
+    background: white;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
   `;
 
 const Burger = styled.div`
@@ -22,7 +27,7 @@ const Burger = styled.div`
 export const Bar = styled.div`
     width: 25px;
     height: 3px;
-    background: #fff;
+    background: #000000;
     border-radius: 2px;
     transition: all 0.3s ease;
 
@@ -47,10 +52,9 @@ const Sidebar = styled.div`
     right: ${({ open }) => (open ? "0" : "-250px")};
     width: 250px;
     height: 100vh;
-    background: #222;
-    color: #fff;
+    background: white;
+    color: #000000;
     display: flex;
-    align-items: center;
     flex-direction: column;
     padding: 80px 20px;
     gap: 20px;
@@ -59,12 +63,9 @@ const Sidebar = styled.div`
 
     hr {
       width: 100%;
+      color: black
     }
 
-    h3 {
-      font-size: 30px;
-      color: #a3a3a3;
-    }
   `;
 
 const Overlay = styled.div`
@@ -85,16 +86,22 @@ const BurgerWrapper = styled.div`
 
 const StyledNavLink = styled(NavLink)`
     text-decoration: none;
-    color: #fff;
-    font-size: 24px;
+    color: #000000;
+    font-size: 18px;
     transition: color 0.2s ease;
 
-    &.active {
-      color: #f73c3c;
-    }
+  
 
     &:hover {
-      color: #ff7b7b;
+      color: #2c2c2c;
+      transform: scale(1.03);
+      transition: ease .3s;
+   
+    }
+
+      &.active {
+      color: #000000;
+      font-weight: bold;
     }
   `;
 
@@ -104,11 +111,11 @@ export const BurgerNav = () => {
   return (
     <>
       <Nav>
-        <h1>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+        <h2>
+          <Link to="/">
             CineVault
           </Link>
-        </h1>
+        </h2>
         <Burger onClick={() => setIsOpen(!isOpen)}>
           <Bar open={isOpen} />
           <Bar open={isOpen} />
@@ -125,15 +132,14 @@ export const BurgerNav = () => {
             About
           </StyledNavLink>
           <hr />
-          <h3>Movies</h3>
           <StyledNavLink to="/" onClick={() => setIsOpen(false)}>
-            English
+            🇺🇸 English
           </StyledNavLink>
-          <StyledNavLink to="/es-SE" onClick={() => setIsOpen(false)}>
-            Spanish
+          <StyledNavLink to="/es-ES" onClick={() => setIsOpen(false)}>
+            🇪🇸 Spanish
           </StyledNavLink>
           <StyledNavLink to="/ru-RU" onClick={() => setIsOpen(false)}>
-            Russian
+            🇷🇺 Russian
           </StyledNavLink>
         </Sidebar>
       </BurgerWrapper>

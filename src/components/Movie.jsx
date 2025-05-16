@@ -4,8 +4,9 @@ import { Media } from "../components/Media"
 //#region ---- Styling ----
 const MovieWraper = styled.div`
   position: relative;
-  border: solid black 2px;  
+  border: solid white 2px;  
   width: 100%;
+  height: 100%;
   aspect-ratio: 2 / 3;
   text-align: left;
 
