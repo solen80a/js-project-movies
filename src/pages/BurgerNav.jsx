@@ -129,10 +129,10 @@ export const BurgerNav = () => {
           <StyledNavLink to="/" onClick={() => setIsOpen(false)}>
             English
           </StyledNavLink>
-          <StyledNavLink to="/es" onClick={() => setIsOpen(false)}>
+          <StyledNavLink to="/es-SE" onClick={() => setIsOpen(false)}>
             Spanish
           </StyledNavLink>
-          <StyledNavLink to="/ru" onClick={() => setIsOpen(false)}>
+          <StyledNavLink to="/ru-RU" onClick={() => setIsOpen(false)}>
             Russian
           </StyledNavLink>
         </Sidebar>

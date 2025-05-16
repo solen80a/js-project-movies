@@ -107,7 +107,7 @@ export const ShowMovie = () => {
   return (
     <section>
       <ShowMovieWrapper $background={backgroundUrl}>
-        <BackToMoviesWrapper to={"/"}> ⬅ Back to Movies</BackToMoviesWrapper>
+        <BackToMoviesWrapper to={language === "en-EN" ? "/" : `/${language}`}> ⬅ Back to Movies</BackToMoviesWrapper>
 
         <MovieTextWrapper>
           <div>

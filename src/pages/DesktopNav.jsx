@@ -17,10 +17,10 @@ export const DesktopNav = () => {
             <NavLink to="/">English</NavLink>
           </li>
           <li>
-            <NavLink to="/es">Spanish</NavLink>
+            <NavLink to="/es-ES">Spanish</NavLink>
           </li>
           <li>
-            <NavLink to="/ru">Russian</NavLink>
+            <NavLink to="/ru-RU">Russian</NavLink>
           </li>
         </ul>
       </div>
