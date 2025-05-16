@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Media } from "../components/Media";
 // import { Link, NavLink } from "react-router-dom";
-import { DesktopNav } from "./DesktopNav copy";
+import { DesktopNav } from "./DesktopNav";
 import { BurgerNav } from "./BurgerNav";
 
 //#region ---- Styling ----
