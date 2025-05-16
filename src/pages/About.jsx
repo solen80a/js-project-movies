@@ -33,7 +33,7 @@ const AboutSectionWrapper = styled.section`
     text-align: left;
   }
 
-
+    }
 `
 
 const AboutTextWrapper = styled.div`
