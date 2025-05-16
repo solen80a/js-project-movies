@@ -4,19 +4,15 @@ import { ShowMovie } from "./pages/ShowMovie";
 import { About } from "./pages/About";
 import { Nav } from "./pages/Nav";
 import { NotFound } from "./pages/NotFound";
-import { getMovieUrls } from "./components/getMovieUrls";
+import { getMovieUrls, LanguageTags } from "./components/getMovieUrls";
 
 export const App = () => {
 
   const { englishUrl: urlEn, spanishUrl: urlEs, russianUrl: urlRu } = getMovieUrls();
-
-  const englishTag = "en-EN"
-  const spanishTag = "es-ES"
-  const russianTag = "ru-RU"
+  const { englishTag, spanishTag, russianTag } = LanguageTags()
 
   return (
     <>
-
 
       <BrowserRouter>
         <Nav />

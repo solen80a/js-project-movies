@@ -9,3 +9,11 @@ export const getMovieUrls = ({ movieID, language } = {}) => {
 
   };
 };
+
+export const LanguageTags = () => {
+  const englishTag = "en-EN";
+  const spanishTag = "es-ES";
+  const russianTag = "ru-RU";
+
+  return { englishTag, spanishTag, russianTag };
+};
