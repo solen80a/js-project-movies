@@ -61,7 +61,7 @@ export const MoreDetails = ({ actors }) => {
   return (
     <>
       <ActorsWrapper>
-        <h2>Actors</h2>
+        <h2>Top Cast</h2>
         <ActorsWrapper2>
           {actors.slice(0, 8).map((actor) => (
             <ActorCard key={actor.name}>
