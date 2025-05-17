@@ -37,14 +37,15 @@ const ActorCard = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto; 
+  
 
   img {
     width: 150px;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     transition: ease .2s;
     border: solid 2px white;
-    border-radius: 10px;
+    border-radius: 100px;
 
       @media ${Media.mobile}{ 
        width: 120px;
