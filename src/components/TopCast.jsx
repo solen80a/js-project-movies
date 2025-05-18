@@ -1,4 +1,4 @@
-import { useOutletContext, Link } from "react-router";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Media } from "./Media";
 
@@ -60,25 +60,29 @@ const ActorCard = styled.div`
   }
 
 `;
-export const TopCast = () => {
-  const { actors } = useOutletContext(); // ✅ This pulls actors from <Outlet context={{ actors }} />
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
+export const TopCast = ({ actors, language }) => {
 
   return (
     <ActorsWrapper>
       <h2>Top Cast</h2>
       <ActorsWrapper2>
         {actors.slice(0, 8).map((actor) => (
-          <Link
+          <StyledLink
             key={actor.id}
-            to={`actor/${actor.id}`}
-            style={{ textDecoration: "none", color: "inherit" }}
+            to={`/actor/${actor.id}/${language}`}
           >
             <ActorCard>
               <img src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={`Image of ${actor.name}`} />
               <h3>{actor.name}</h3>
               <p>Character: {actor.character}</p>
             </ActorCard>
-          </Link>
+          </StyledLink>
         ))}
       </ActorsWrapper2>
     </ActorsWrapper>

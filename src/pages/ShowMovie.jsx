@@ -2,8 +2,8 @@ import { useParams } from "react-router"
 import { useFetchMovies } from "../components/useFetchApi";
 import { getMovieUrls } from "../components/getMovieUrls";
 import { Loader } from "../components/Loader";
-import { Outlet } from "react-router";
 import { MovieDetails } from "../components/MovieDetails";
+import { TopCast } from "../components/TopCast";
 
 export const ShowMovie = () => {
   const { movieID, language } = useParams();
@@ -23,7 +23,7 @@ export const ShowMovie = () => {
         <MovieDetails movies={movies} language={language}></MovieDetails>
       </section>
       <section>
-        <Outlet context={{ actors }} />
+        <TopCast actors={actors} language={language} />
       </section>
     </>
 

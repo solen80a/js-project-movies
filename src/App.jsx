@@ -22,10 +22,8 @@ export const App = () => {
           <Route path="/" element={<MovieList url={urlEn} language={englishTag} />} />
           <Route path="/es-ES" element={<MovieList url={urlEs} language={spanishTag} />} />
           <Route path="/ru-RU" element={<MovieList url={urlRu} language={russianTag} />} />
-          <Route path="/movie/:movieID/:language" element={<ShowMovie />}>
-            <Route index element={<TopCast />} />
-            <Route path="actor/:actorID" element={<ShowActor />} />
-          </Route>
+          <Route path="/movie/:movieID/:language" element={<ShowMovie />} />
+          <Route path="/actor/:actorID/:language" element={<ShowActor />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
