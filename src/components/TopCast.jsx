@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { useOutletContext, Link } from "react-router";
+import styled from "styled-components";
 import { Media } from "./Media";
 
 const ActorsWrapper = styled.article`
@@ -37,6 +38,12 @@ const ActorCard = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto; 
+  transition: transform ease .3s;
+  cursor: pointer;
+
+    &:hover {
+    transform: scale(1.05);
+  }
   
 
   img {
@@ -52,26 +59,28 @@ const ActorCard = styled.div`
    }
   }
 
- 
-
-
 `;
+export const TopCast = () => {
+  const { actors } = useOutletContext(); // ✅ This pulls actors from <Outlet context={{ actors }} />
 
-export const MoreDetails = ({ actors }) => {
   return (
-    <>
-      <ActorsWrapper>
-        <h2>Top Cast</h2>
-        <ActorsWrapper2>
-          {actors.slice(0, 8).map((actor) => (
-            <ActorCard key={actor.name}>
+    <ActorsWrapper>
+      <h2>Top Cast</h2>
+      <ActorsWrapper2>
+        {actors.slice(0, 8).map((actor) => (
+          <Link
+            key={actor.id}
+            to={`actor/${actor.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <ActorCard>
               <img src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={`Image of ${actor.name}`} />
               <h3>{actor.name}</h3>
               <p>Character: {actor.character}</p>
             </ActorCard>
-          ))}
-        </ActorsWrapper2>
-      </ActorsWrapper >
-    </>
+          </Link>
+        ))}
+      </ActorsWrapper2>
+    </ActorsWrapper>
   );
 };

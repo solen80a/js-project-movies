@@ -5,6 +5,9 @@ import { About } from "./pages/About";
 import { Nav } from "./components/Nav";
 import { NotFound } from "./pages/NotFound";
 import { getMovieUrls, LanguageTags } from "./components/getMovieUrls";
+import { TopCast } from "./components/TopCast";
+import { ShowActor } from "./components/ShowActor";
+
 
 export const App = () => {
 
@@ -19,7 +22,10 @@ export const App = () => {
           <Route path="/" element={<MovieList url={urlEn} language={englishTag} />} />
           <Route path="/es-ES" element={<MovieList url={urlEs} language={spanishTag} />} />
           <Route path="/ru-RU" element={<MovieList url={urlRu} language={russianTag} />} />
-          <Route path="/movie/:movieID/:language" element={<ShowMovie />} />
+          <Route path="/movie/:movieID/:language" element={<ShowMovie />}>
+            <Route index element={<TopCast />} />
+            <Route path="actor/:actorID" element={<ShowActor />} />
+          </Route>
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
