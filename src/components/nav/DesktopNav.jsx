@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Media } from "./Media";
 import { Link, NavLink } from "react-router-dom";
 
 const Wrapper = styled.div`

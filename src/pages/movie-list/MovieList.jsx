@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import { Movie } from "../components/Movie"
+import { Movie } from "./Movie"
 import styled from "styled-components"
-import { Media } from "../components/Media"
-import { useFetchMovies } from "../components/useFetchApi"
-import { Loader } from "../components/Loader"
+import { Media } from "../../components/themes/Media"
+import { useFetchMovies } from "../../components/fetching/useFetchApi"
+import { Loader } from "../../components/fetching/Loader"
 
 //#region ---- Styling ----
 const MovieListWrapper = styled.section`

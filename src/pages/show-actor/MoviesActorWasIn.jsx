@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router";
-import { Media } from "./Media";
+import { Media } from "../../components/themes/Media";
 
 const MoviesActorWasInWrapper = styled.section`
 background-color: #efefef;

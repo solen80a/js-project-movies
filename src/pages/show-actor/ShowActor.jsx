@@ -1,10 +1,10 @@
-import { useFetchMovies } from "./useFetchApi";
+import { useFetchMovies } from "../../components/fetching/useFetchApi";
 import { useParams } from "react-router";
-import { getMovieUrls } from "./getMovieUrls";
+import { getMovieUrls } from "../../components/fetching/getMovieUrls";
 import styled from "styled-components";
 import { Link } from "react-router";
 import { ActorDetails } from "./ActorDetails";
-import { MoviesActorWasIn } from "./MoviesActorWasIn"
+import { MoviesActorWasIn } from "./MoviesActorWasIn";
 
 const BackgroundWrapper = styled.div`
 background-color: #efefef;

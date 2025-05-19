@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { Media } from "../components/Media"
+import { Media } from "../../components/themes/Media"
 
 //#region ---- Styling ----
 const MovieWraper = styled.div`

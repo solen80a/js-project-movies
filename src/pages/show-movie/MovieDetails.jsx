@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "./Media";
+import { Media } from "../../components/themes/Media";
 import { Link } from "react-router";
 
 

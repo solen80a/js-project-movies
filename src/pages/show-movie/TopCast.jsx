@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Media } from "./Media";
+import { Media } from "../../components/themes/Media";
 
 const ActorsWrapper = styled.article`
 display: flex;

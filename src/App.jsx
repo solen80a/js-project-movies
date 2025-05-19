@@ -1,12 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import { MovieList } from "./pages/MovieList";
-import { ShowMovie } from "./pages/ShowMovie";
-import { About } from "./pages/About";
-import { Nav } from "./components/Nav";
-import { NotFound } from "./pages/NotFound";
-import { getMovieUrls, LanguageTags } from "./components/getMovieUrls";
-import { TopCast } from "./components/TopCast";
-import { ShowActor } from "./components/ShowActor";
+import { MovieList } from "./pages/movie-list/MovieList";
+import { ShowMovie } from "./pages/show-movie/ShowMovie";
+import { About } from "./pages/about/About";
+import { Nav } from "./components/nav/Nav";
+import { NotFound } from "./pages/page-not-found/NotFound";
+import { getMovieUrls, LanguageTags } from "./components/fetching/getMovieUrls";
+import { ShowActor } from "./pages/show-actor/ShowActor";
 
 
 export const App = () => {
