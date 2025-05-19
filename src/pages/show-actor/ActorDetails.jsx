@@ -5,18 +5,30 @@ const ActorDetails2 = styled.div`
 display: flex;
 flex-direction: row;
 text-align: center;
-column-gap: 30px;
+column-gap: 10px;
 align-items: center;
-height: 300px;
-overflow: scroll;
-
-
+justify-content: center;
+height: 240px;
 
 
 div {
   text-align: center;
   width: 50%;
+  height: 100%;
+  overflow: scroll;
+
+   /* Hide scrollbar for WebKit browsers */
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* Optional: hide scrollbar track */
+  }
+
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
+
 
 img {
       height: 230px;
@@ -44,7 +56,9 @@ img {
     flex-direction: row;
     align-items: flex-end;
     margin-left: 10%; 
-    height: 37vh;
+    height: 35vh;
+    column-gap: 35px;
+    justify-content: flex-start;
 
     img {
       height: 100%;
@@ -58,16 +72,7 @@ img {
   }
 
 
-  /* Hide scrollbar for WebKit browsers */
-  &::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    background: transparent; /* Optional: hide scrollbar track */
-  }
-
-  /* Hide scrollbar for Firefox */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+ 
 `
 
 export const ActorDetails = ({ actor }) => {
