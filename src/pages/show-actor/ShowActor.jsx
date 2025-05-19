@@ -20,7 +20,8 @@ const BackToMoviesWrapper = styled(Link)`
   color: inherit;
   width: 300px;
   text-align: left;  
-  margin-top: 40px ;
+  margin-top: 25px ;
+  margin-bottom: 25px;
   margin-left: 40px;
   text-decoration: none;
   cursor: pointer;  

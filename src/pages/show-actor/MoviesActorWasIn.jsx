@@ -4,8 +4,6 @@ import { Media } from "../../components/themes/Media";
 
 const MoviesActorWasInWrapper = styled.section`
 background-color: #efefef;
-padding-top: 15px;
-
 
   h2 {
     margin-bottom: 0;
@@ -25,6 +23,9 @@ const Actor = styled.article`
   img {
     height: 150px;
     border-radius: 10px;
+    width: 150px;
+    object-fit: cover;
+    background-color: black;
   }
 
 
@@ -51,6 +52,7 @@ const Actor = styled.article`
 
 const InMoviesCardLink = styled(Link)`
     display: flex;
+    flex-direction: column;
     column-gap: 20px;
     align-items: center;
     text-decoration: none;
@@ -63,21 +65,22 @@ const InMoviesCardLink = styled(Link)`
     border: solid 2px white;
     border-radius: 10px;
     background-color: #ffffff;
-    width: 500px;
+    width: 200px;
 
   &:hover {
     transform: scale(1.05);
   }
 
     @media ${Media.desktop}, ${Media.widescreen}{
-
+       width: 500px;
+        flex-direction: row;
     }
 
     @media ${Media.mobile}{
-      height: 200px; 
+      height: 400px; 
+  
+  
     }
-
-
 
 `
 
@@ -89,7 +92,14 @@ export const MoviesActorWasIn = ({ moviesIn, language }) => {
         <Actor>
           {moviesIn.slice(0, 20).map(movieIn => (
             <InMoviesCardLink key={movieIn.Id} to={`/movie/${movieIn.id}/${language}`}>
-              <img src={`https://image.tmdb.org/t/p/original${movieIn.poster_path}`} alt="" />
+              <img
+                src={`https://image.tmdb.org/t/p/original${movieIn.poster_path}`}
+                alt={movieIn.title}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '/noMovie.png';
+                }}
+              />
               <div>
                 <h3>{movieIn.title}</h3>
                 <p>{`Character: ${movieIn.character}`}</p>

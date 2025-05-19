@@ -78,7 +78,11 @@ export const TopCast = ({ actors, language }) => {
             to={`/actor/${actor.id}/${language}`}
           >
             <ActorCard>
-              <img src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={`Image of ${actor.name}`} />
+              <img src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={`Image of ${actor.name}`}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = '/noMovie.png';
+                }} />
               <h3>{actor.name}</h3>
               <p>Character: {actor.character}</p>
             </ActorCard>

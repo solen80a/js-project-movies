@@ -26,7 +26,7 @@ width: 100%;
   }
   
   a:hover {
- transform: scale(1.02);
+ transform: scale(1.08);
   }
 
   a.active {
