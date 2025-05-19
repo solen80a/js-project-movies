@@ -1,9 +1,15 @@
 import styled from "styled-components"
 import { Link } from "react-router";
+import { Media } from "./Media";
 
 const MoviesActorWasInWrapper = styled.section`
 background-color: #efefef;
 padding-top: 15px;
+
+
+  h2 {
+    margin-bottom: 0;
+  }
 `
 
 const Actor = styled.article`
@@ -14,13 +20,13 @@ const Actor = styled.article`
   justify-content: center;
   align-items: flex-start;
   column-gap: 25px;
-  margin-bottom: 100px;
   padding: 20px;
-  scroll-padding-left: 30px;
 
   img {
-    height: 230px;
+    height: 150px;
+    border-radius: 10px;
   }
+
 
     /* Hide scrollbar for WebKit browsers */
   &::-webkit-scrollbar {
@@ -30,6 +36,17 @@ const Actor = styled.article`
   /* Hide scrollbar for Firefox */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  
+
+  @media ${Media.desktop}, ${Media.widescreen}{
+
+    height: 40vh;
+    align-items: center;
+
+     img {
+        height: 230px;
+  }
+  }
 `;
 
 const InMoviesCardLink = styled(Link)`
@@ -42,7 +59,7 @@ const InMoviesCardLink = styled(Link)`
     cursor: pointer;
     scroll-snap-align: start;
     flex-shrink: 0;
-    padding: 10px;
+    padding: 20px;
     border: solid 2px white;
     border-radius: 10px;
     background-color: #ffffff;
@@ -51,6 +68,17 @@ const InMoviesCardLink = styled(Link)`
   &:hover {
     transform: scale(1.05);
   }
+
+    @media ${Media.desktop}, ${Media.widescreen}{
+
+    }
+
+    @media ${Media.mobile}{
+      height: 200px; 
+    }
+
+
+
 `
 
 export const MoviesActorWasIn = ({ moviesIn, language }) => {
@@ -59,7 +87,7 @@ export const MoviesActorWasIn = ({ moviesIn, language }) => {
       <MoviesActorWasInWrapper>
         <h2 style={{ textAlign: "center" }}>Movies Credits</h2>
         <Actor>
-          {moviesIn.slice(0, 10).map(movieIn => (
+          {moviesIn.slice(0, 20).map(movieIn => (
             <InMoviesCardLink key={movieIn.Id} to={`/movie/${movieIn.id}/${language}`}>
               <img src={`https://image.tmdb.org/t/p/original${movieIn.poster_path}`} alt="" />
               <div>

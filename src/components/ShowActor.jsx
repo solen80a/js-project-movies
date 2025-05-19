@@ -6,16 +6,25 @@ import { Link } from "react-router";
 import { ActorDetails } from "./ActorDetails";
 import { MoviesActorWasIn } from "./MoviesActorWasIn"
 
+const BackgroundWrapper = styled.div`
+background-color: #efefef;
+`
+
 const ActorWrapper = styled.div`
 height: 96dvh;
 margin: 0 auto;
 `
 
 const BackToMoviesWrapper = styled(Link)` 
+  display: inline-block;
+  color: inherit;
   width: 300px;
   text-align: left;  
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 1rem ;
+  margin-top: 40px ;
+  margin-left: 40px;
+  text-decoration: none;
+  cursor: pointer;  
+  font-size: 20px;
 `
 
 export const ShowActor = () => {
@@ -25,12 +34,14 @@ export const ShowActor = () => {
   const { movies: actor } = useFetchMovies(actorPersobalDetailUrl);
 
   return (
-    <>
+    <BackgroundWrapper>
+
       <BackToMoviesWrapper to={language === "en-EN" ? "/" : `/${language}`}> ⬅ Back to Movies</BackToMoviesWrapper>
       <ActorWrapper>
         <ActorDetails actor={actor} />
         <MoviesActorWasIn moviesIn={moviesIn} language={language} />
       </ActorWrapper>
-    </>
+
+    </BackgroundWrapper>
   );
 };
