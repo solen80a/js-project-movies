@@ -15,9 +15,8 @@ const Actor = styled.article`
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   flex-direction: row;
-  justify-content: center;
   align-items: flex-start;
-  column-gap: 25px;
+  column-gap: 10px;
   padding: 20px;
 
   img {
@@ -43,6 +42,7 @@ const Actor = styled.article`
 
     height: 40vh;
     align-items: center;
+    column-gap: 25px;
 
      img {
         height: 230px;
@@ -78,42 +78,36 @@ const InMoviesCardLink = styled(Link)`
 
     @media ${Media.mobile}{
       height: 400px; 
-  
-  
     }
 
 `
 
 export const MoviesActorWasIn = ({ moviesIn, language }) => {
+  const sortedMoviesByPopular = [...moviesIn].sort((a, b) => b.popularity - a.popularity);
+
   return (
-    <>
-      <MoviesActorWasInWrapper>
-        <h2 style={{ textAlign: "center" }}>Movies Credits</h2>
-        <Actor>
-          {moviesIn.slice(0, 20).map(movieIn => (
-            <InMoviesCardLink key={movieIn.Id} to={`/movie/${movieIn.id}/${language}`}>
-              <img
-                src={`https://image.tmdb.org/t/p/original${movieIn.poster_path}`}
-                alt={movieIn.title}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = '/noMovie.png';
-                }}
-              />
-              <div>
-                <h3>{movieIn.title}</h3>
-                <p>{`Character: ${movieIn.character}`}</p>
-                <p>{`Relese date: ${movieIn.release_date}`}</p>
-                <p>{`Rating: ${movieIn.vote_count}`}</p>
-              </div>
-
-            </InMoviesCardLink>
-          ))}
-        </Actor >
-      </MoviesActorWasInWrapper>
-    </>
-  )
-}
-
-
-
+    <MoviesActorWasInWrapper>
+      <h2 style={{ textAlign: "center" }}>Movies Credits</h2>
+      <Actor>
+        {sortedMoviesByPopular.slice(0, 20).map(movieIn => (
+          <InMoviesCardLink key={movieIn.id} to={`/movie/${movieIn.id}/${language}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/original${movieIn.poster_path}`}
+              alt={movieIn.title}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/noMovie.png';
+              }}
+            />
+            <div>
+              <h3>{movieIn.title}</h3>
+              <p>{`Character: ${movieIn.character}`}</p>
+              <p>{`Release date: ${movieIn.release_date}`}</p>
+              <p>{`Rating: ${movieIn.vote_count}`}</p>
+            </div>
+          </InMoviesCardLink>
+        ))}
+      </Actor>
+    </MoviesActorWasInWrapper>
+  );
+};
